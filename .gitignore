@@ -16,6 +16,9 @@ res/*
 typings/*
 www/img/logo.png
 
+# Stuff I'm not allowed to add.
+www/audio/*
+
 
 # End of https://www.gitignore.io/api/apachecordova
 

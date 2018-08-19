@@ -32,18 +32,75 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+        <title>Fate Maker</title>
+
+        <!-- Scripts Used -->
+        <script type="text/javascript" src="lib/jquery/jquery-2.1.4.js"></script>
+
+        <!--Style related stuff goes here-->
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+        <!-- Optional Bootstrap theme -->
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+        
+        <!-- Odometer -->
+        <link rel="stylesheet" type="text/css" href="lib/odometer/default.css">
+        <script src="lib/odometer/odometer.min.js"></script>
+        
+        <style>
+            .odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-minimal.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-minimal.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+                -webkit-transition-duration: 0.3s !important;
+                -moz-transition-duration: 0.3s !important;
+                -ms-transition-duration: 0.3s !important;
+                -o-transition-duration: 0.3s !important;
+                transition-duration: 0.3s !important
+}
+        </style>
+
     </head>
-    <body>
-        <div class="app">
+    <body style="height: 100%">
+
+        <div id="main" style="position: relative; min-height: 100%; transform: translateY(5%);">
+                       
+            <div class="container" style="align-self: center;">
+                <div class="row">
+                    <div class="col-xs-12" style="font-size: 30px; text-align: center">
+                        <div id="fateDisplay" class="odometer">
+                            0
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="row">
+                    <div class="container" style="width: 60%; padding: 5px">
+                        <input type="number" step="1" class="form-control" id="optionField">  
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="container" style="width: 60%; padding: 5px">
+                        <button type="button" class="btn btn-primary btn-block" id="randomize">
+                             Random!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <!-- <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-        </div>
+        </div> -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript" src="js/filelist.js"></script>
+        <script type="text/javascript" src="js/fatemaker.js"></script>
+
     </body>
 </html>
