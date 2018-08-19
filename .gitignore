@@ -1,0 +1,26 @@
+
+# Created by https://www.gitignore.io/api/apachecordova
+
+### ApacheCordova ###
+# Apache Cordova generated files and directories
+bin/*
+!/plugins
+!/plugins/android.json
+!/plugins/fetch.json
+plugins/*
+platforms/*
+
+.vscode/*
+node_modules/*
+res/*
+typings/*
+www/img/logo.png
+
+
+# End of https://www.gitignore.io/api/apachecordova
+
+# Things that do need to be done:
+# npm install -g cordova
+# cordova create FateMaker
+# cordova platform add android
+# cordova platform add browser
