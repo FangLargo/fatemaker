@@ -51,25 +51,10 @@ var duration;
 var progress = 0;
 
 audio.addEventListener('loadedmetadata', function () {
-    //var increment;
-    
-    //console.log(audio.duration);
-    duration = audio.duration * 1000;
-    
-    //fateDisplay.text(duration);
 
-//    if(mobile === false){
-//        audio.play();
-//    } else {
-//        //playCordova(audio);
-//    }
+    duration = audio.duration * 1000;
 
     setTimeout(function() {
-        /*
-        progress = audio.currentTime * 1000;
-        fateDisplay.text(Math.floor((Math.random() * optionField.val()) + 1));
-        document.body.style.background = getRandomColor();
-        */
         duration = audio.duration * 1000;
         updateFate();
     }, 2000);
@@ -78,48 +63,6 @@ audio.addEventListener('loadedmetadata', function () {
     fateDisplay.text(Math.floor((Math.random() * optionField.val()) + 1));
     document.body.style.background = getRandomColor();
     
-    /*
-//    setInterval(function() {
-//        fateDisplay.text(audio.duration);
-//        document.body.style.background = getRandomColor();
-//    }, 1000);
-    
-    //fateDisplay.text(Math.floor((Math.random() * optionField.val()) + 1));
-    //document.body.style.background = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    //document.body.style.background = getRandomColor();
-
-    
-    while (progress < duration) {
-        
-        if (progress < duration/2) {
-            increment = maxInterval - Math.easeInOut(progress, 0, maxInterval, duration);
-        } else {
-            increment = Math.easeInOut(progress, 0, maxInterval, duration);
-        }
-        
-        if (increment > minInterval) {
-            progress = progress + increment;
-        } else {
-            progress = progress + minInterval;
-        }
-
-        setTimeout(function () {
-            fateDisplay.text(Math.floor((Math.random() * optionField.val()) + 1));
-            document.body.style.background = getRandomColor();
-            //fateDisplay.text(duration);
-        }, progress * 0.9);
-        
-        
-    }
-    
-    setTimeout(function () {
-            randomizeButton.text("Randomize!");
-            $("#randomize").addClass("btn-primary");
-            $("#randomize").removeClass("btn-danger");
-            document.getElementById("optionField").removeAttribute("disabled");
-            calculating = false;
-        }, duration * 0.93);
-    */
 });
 
 function updateFate() {
@@ -134,21 +77,15 @@ function updateFate() {
             increment = maxInterval - Math.easeInOut(duration - progress, 0, maxInterval, duration/2);
         }
         
-        if (increment > minInterval) {
-            //progress = progress + increment;
-        } else {
-            //progress = progress + minInterval;
+        if (increment <= minInterval) {
             increment = minInterval;
         }
         
         fateDisplay.text(Math.floor((Math.random() * optionField.val()) + 1));
         document.body.style.background = getRandomColor();
         
-        //console.log(increment + "|" + duration);
-        
         setTimeout(function () {
             updateFate();
-            //fateDisplay.text(duration);
         }, increment * 0.8);
     } else {
         randomizeButton.text("Randomize!");
