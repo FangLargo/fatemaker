@@ -28,3 +28,4 @@ www/audio/*
 # cordova plugin add cordova-plugin-media
 # cordova platform add android
 # cordova platform add browser
+/.gradle/

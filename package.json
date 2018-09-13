@@ -22,8 +22,8 @@
             "cordova-plugin-media": {}
         },
         "platforms": [
-            "android",
-            "browser"
+            "browser",
+            "android"
         ]
     }
 }
